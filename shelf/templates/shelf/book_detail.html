@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+<div><a href="{% url 'shelf:author_list'%}"> Powrot do listy autorów</a></div>
+<div><a href="{% url 'shelf:book_list'%}"> Powrot do listy książek</a></div>
+    {{ object.title }}
+{% endblock %}
