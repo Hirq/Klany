@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/xhtml1-strict.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <HEAD>
+    <meta charset="utf-8"/>
+    <title> TYTUŁ </title>
+    <META http-equiv="Content-Type" content="text/html; charset=utf=8" />
+      <meta name="generator" content="Geany 1.24.1" />
+
+
+
+	<meta name ="description" content=" Baza filmow i seriali " />
+	<meta name ="keywords" content="najlepsze kino, film, serial "/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+
+	<link rel="stylesheet" href="templates/style.css" type="text/css" />
+	<link rel="stylesheet" href="templates/css/fontello.css" type="text/css" />
+
+
+
+
+  </HEAD>
+<BODY>
+<!---tresc naszej strony tutaj -->
+
+    <div>
+        MENU GŁÓWNE:
+        {% if user.is_authenticated %}
+        <a href="{% url 'account_logout'%}">Wyloguj sie</a>
+        {% else %}
+        <a href="{% url 'account_login'%}">Zaloguj</a>,
+        <a href="{% url 'account_signup'%}">Zaloz konto</a>
+
+        {% load socialaccount %}
+        {% providers_media_js %}
+        <a href="{% provider_login_url 'facebook' method='js_sdk' %}">Facebook Connect</a>
+
+        {% load socialaccount %}
+        <a href="{% provider_login_url 'facebook' method='oauth2' %}">Facebook OAuth2</a>
+
+        {% endif %}
+
+	</div>
+
+	<div id="container">
+	
+		<div class="button">SERIALE	<br/> <i class="icon-video">  </i>  </div>
+		<div class="button">FILMY	<br/><i class="icon-videocam"></i> 	 </div>
+		<div style="clear: both;"></div>
+		<div class="other">
+		<center>OPIS</center></br></br></br>
+		
+		Strona ta w przyszłości ma pełnić funkcję portalu dla osób lubiących dobry film oraz serial. Może kiedyś zostanie dodaną gry oraz książki. </br>
+		Portal ten mają tworzyć ludzie dodająć i oceniajać dane pozycje. </br></br></br>
+
+		<center>Obecna strona jest ciągle w procesie produkcji. </center>
+		</div>
+
+	</div>
+    
+    {% block content %}
+    {% endblock %}
+</BODY>
+</HTML>

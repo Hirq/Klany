@@ -1,7 +1,7 @@
 # coding: utf-8
 
 from __future__ import unicode_literals, absolute_import
-
+from django.core.urlresolvers import reverse_lazy
 ###############################
 
 from django.db import models
@@ -25,6 +25,7 @@ class Publisher(models.Model):
         return self.name
 
 
+
 class BookCategory(models.Model):
     name = models.CharField(max_length=50)
 
@@ -41,19 +42,21 @@ class Book (models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse_lazy('shelf:book_detail', kwargs={'pk':self.id})
+
 
 class BookEdition (models.Model):
     """
     Wydanie określonej książki
     """
-    book = models.ForeignKey(Book)
-    isbn = models.CharField(max_length=17)
+    book = models.ForeignKey(Book,related_name='editions')
+    isbn = models.CharField(max_length=17, blank='true')
     date = models.DateField()
     publisher = models.ForeignKey('Publisher')
 
     def __str__(self):
-       return "{book.title}, {publisher.name}".format(book=self.book,
-                                                       publisher=self.publisher)
+       return "{book.title}, {publisher.name}".format(book=self.book, publisher=self.publisher)
 
 COVER_TYPES = (
     ('soft','Soft'),

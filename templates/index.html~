@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+
+{%extends 'base.html' %}
+
+{% block content%}
+
+Strona główna
+
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8"/>
+	<title> TYTUŁ </title>
+	<meta name ="description" content=" Baza filmow i seriali " />
+	<meta name ="keywords" content="najlepsze kino, film, serial "/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+
+	<link rel="stylesheet" href="django/templates/style.css" type="text/css" />
+	<link rel="stylesheet" href="django/templates/css/fontello.css" type="text/css" />
+
+	<!-- <script type="text/javascript"> -->
+	
+	<!-- function odliczanie() -->
+	
+	<!-- { -->
+	 <!-- var dzisiaj = new Date(); -->
+	 
+	 <!-- var dzien = dzisiaj.getDate(); -->
+	 <!-- var miesiac = dzisiaj.getMonth()+1; -->
+	 <!-- var rok = dzisiaj.getFullYear(); -->
+	 <!-- var godzina = dzisiaj.getHours(); -->
+	 <!-- if(godzina<10) godzina = "0"+godzina; -->
+	 <!-- var minuta = dzisiaj.getMinutes(); -->
+	 <!-- if(minuta<10) minuta = "0"+minuta; -->
+	 <!-- var sekunda = dzisiaj.getSeconds(); -->
+	 <!-- if(sekunda<10) sekunda = "0"+sekunda; -->
+	 <!-- document.getElementById("zegar").innerHTML = dzien+"/"+miesiac+"/"+rok+" | "+godzina+"/"+minuta+"/"+sekunda; -->
+	 
+	 <!-- setTimeout("odliczanie()",1000); -->
+	<!-- } -->
+	
+
+	 
+	<!-- </script> -->
+			
+</head>
+
+
+<body>
+	<div id="container">
+	
+		<div class="button">SERIALE	<br/> <i class="icon-video">  </i>  </div>
+		<div class="button">FILMY	<br/><i class="icon-videocam"></i> 	 </div>
+		<div style="clear: both;"></div>
+		<div class="other">
+		<center>OPIS</center></br></br></br>
+		
+		Strona ta w przyszłości ma pełnić funkcję portalu dla osób lubiących dobry film oraz serial. Może kiedyś zostanie dodaną gry oraz książki. </br>
+		Portal ten mają tworzyć ludzie dodająć i oceniajać dane pozycje. </br></br></br>
+
+		<center>Obecna strona jest ciągle w procesie produkcji. </center>
+		</div>
+
+	</div>
+
+<!-- <body onload="odliczanie();"> -->
+	
+	<!-- <div id="zegar"></div> -->
+	
+	<!-- <script type="text/javascript"> -->
+	 
+	<!-- </script> -->
+
+
+</body>
+
+
+</html>
+
+{%endblock %}
+
+{% block title %} Strona główna {%endblock %}
