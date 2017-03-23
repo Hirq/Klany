@@ -18,7 +18,7 @@ from django.contrib import admin
 
 from shelf.views import MainPageView
 from contact.views import MessageAddView
-
+# from Rental.views import BookRentView
 
 
 urlpatterns = [
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^$',MainPageView.as_view(),name='main-page'),
     #url(r'^$', 'shelf.views.index_view',name='main-page'),
 
+    # url(r'Rental/$', BookRentView.as_view()),
 
 
     url(r'^accounts/', include('allauth.urls')),

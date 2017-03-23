@@ -18,8 +18,8 @@ class AuthorAdmin(admin.ModelAdmin):
 
 
 class BookAdmin(admin.ModelAdmin):
-    search_fields =  ['title']
-    list_display =  ['title']
+    search_fields = ['title']
+    list_display = ['title']
 
 
 admin.site.register(Book, BookAdmin)

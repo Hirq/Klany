@@ -45,6 +45,8 @@ class Production(Configuration):
         'allauth.socialaccount',
         'allauth.socialaccount.providers.facebook',
 
+        'bootstrap3',
+
         'shelf',
         'contact',
         'Rental',
@@ -80,8 +82,8 @@ class Production(Configuration):
                 'django.contrib.messages.context_processors.messages',
 
 
-                # 'allauth.account.context_processors.account',
-                # 'allauth.socialaccount.context_processors.socialaccount',
+                 # 'allauth.account.context_processors.account',
+                 # 'allauth.socialaccount.context_processors.socialaccount',
 
                 ],
             },
@@ -134,12 +136,17 @@ class Production(Configuration):
 
     USE_TZ = True
 
-    #AUTH_USER_MODEL = 'users.BiblioUser'
+    # AUTH_USER_MODEL = 'users.BiblioUser'
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
     STATIC_URL = '/static/'
 
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+    MEDIA_URL = '/media/'
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
     AUTHENTICATION_BACKENDS = (
@@ -153,7 +160,7 @@ class Production(Configuration):
     SITE_ID = 7
 
 
-    LOGIN_URL = 'main-page'
+    LOGIN_REDIRECT_URL = 'main-page'
 
 class Dev(Production):
     DEBUG = True
