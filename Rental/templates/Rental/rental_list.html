@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+{% for Rental in object_list %}
+
+    <li> <a  href="{% url 'Rental:rental_detail' Rental.id %}" style="text-decoration: none;color: white"> {{ Rental.name }} {{ Rental.whoo }}</li>
+
+
+{% endfor %}
+</ul>
+
+{% endblock %}
+

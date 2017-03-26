@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+
+Co zostało wypożyczone:   {{ object.name }} </br>
+Komu zostalo wypożyczone: {{ object.whoo }}
+
+
+    <li> <a href="{% url 'Rental:rental_delete' object.id %}"> USUN </li>
+
+
+
+
+
+
+</ul>
+
+{% endblock %}
