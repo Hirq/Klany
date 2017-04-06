@@ -1,10 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "http://www.w3.org/TR/xhtml1/xhtml1-strict.dtd">
+
 <HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <HEAD>
     <TITLE>bez nazwy</TITLE>
     <META http-equiv="Content-Type" content="text/html; charset=utf=8" />
       <meta name="generator" content="Geany 1.24.1" />
+
+      {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'js/timer.js' %}"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
 
 
       {% load socialaccount %}
@@ -14,20 +25,24 @@
       {% bootstrap_css %}
       {% bootstrap_javascript %}
       {% bootstrap_messages %}
+
   </HEAD>
     <style>
     {% block style %}
     .bg {background-color: #4B0082;!important; width: 100%; height: 36px; text-align: left;}
     .bgg {background-color: #4B0082;!important; margin-top: -34px; text-align: right;}
-    .bg1 {background-color: #cccc00; width: 100%;height: 70px; text-align: center; font-size: 55px; margin-top: auto;
+    .klany_tematyczne {background-color: #009966;!important; width: 100%;height: 70px; text-align: center; font-size: 55px; margin-top: auto;
     margin-bottom: auto;}
 
-    .tlo { background-image : url("http://itcher.com/mag/wp-content/uploads/2015/11/Catch-22.2.jpg");
-    background-position: top; color: black; }
+    .tlo { background-image : url("http://www.tapeciarnia.pl/tapety/normalne/tapeta-abstrakcyjne-tlo-z-kolorowych-kolek.jpg");
+    background-position: top; color: black;font-size: 20px;}
+
+
+
     {% endblock %}
     </style>
 
-<BODY class="tlo">
+<BODY class = "tlo">
 
 <!---tresc naszej strony tutaj -->
 
@@ -37,6 +52,7 @@
         <a class="btn btn-info" href="/shelf/authors">Lista autorow</a>
         <a class="btn btn-info" href="/Rental">Rental</a>
         <a class="btn btn-info" href="/Rental/List">Lista</a>
+        <a class="btn btn-primary" href="/">Strona główna</a>
         <div class="bgg">
             <a class="btn btn-info" href="/contact">Kontakt</a>
         </div>
@@ -47,16 +63,73 @@
 
         <a class="btn btn-info" href="/shelf/authors">Lista autorow</a>
         <div class="bgg">
-            <a class="btn btn-info" href="/contact">Kontakt</a>
+            <a class="btn btn-info" href="  /contact">Kontakt</a>
         </div>
 
         <!--<a href="{% provider_login_url 'facebook' method='js_sdk' %}">Facebook Connect</a>-->
         {% endif %}
     </div>
-    <div class="bg1">
 
-        <a href="/"style="text-decoration: none;color: green">KLANY TEMATYCZNE </a>
+
+<!-- SLIDER -->
+
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for carousel items -->
+    <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="/static/img/biblio1.png"  alt="Chania">
+      <div class="carousel-caption">
+        <h3>Chania</h3>
+        <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+      </div>
     </div>
+
+    <div class="item">
+      <img src="/static/img/biblio2.png" alt="Chania">
+      <div class="carousel-caption">
+        <h3>Chania</h3>
+        <p>The atmosphere in Chania hdadsas a touch of Florence and Venice.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="/static/img/biblio3.png" alt="Flower">
+      <div class="carousel-caption">
+        <h3>Flowers</h3>
+        <p>Beatiful flowers in Kolymbari, Crete.</p>
+      </div>
+    </div>
+
+    </div>
+
+    <!-- Carousel controls -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

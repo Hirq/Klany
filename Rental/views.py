@@ -10,7 +10,7 @@ from .models import Rental
 
 class BookRentView(CreateView):
     model = Rental
-    fields = ['name','whoo']
+    fields = ['name','whoo','who']
     template_name = 'Rental/Rental-add.html'
 
 

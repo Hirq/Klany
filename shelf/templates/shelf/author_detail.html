@@ -11,6 +11,7 @@ Profil Autora {{ object.last_name }}, {{ object.first_name }}
     <li><a href="{{ book.get_absolute_url }}">
 {#    <li><a href="{% url 'shelf:book_detail' book.id %}">#}
         {{ book.title }}
+      </li>
     </li>
 {% endfor %}
 

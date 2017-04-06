@@ -4,8 +4,9 @@
 <ul>
 {% for Rental in object_list %}
 
-    <li> <a  href="{% url 'Rental:rental_detail' Rental.id %}" style="text-decoration: none;color: white"> {{ Rental.name }} {{ Rental.whoo }}</li>
-
+    {% if Rental.who_id == 1 %}
+    <li> <a  href="{% url 'Rental:rental_detail' Rental.id %}" style="text-decoration: none;color: #FFFFFF"> {{ Rental.name }} {{ Rental.whoo }} {{Rental.who}} -  ID.{{Rental.who_id}}</li>
+    {%endif%}
 
 {% endfor %}
 </ul>

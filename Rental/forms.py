@@ -4,4 +4,4 @@ from .models import Rental
 class BookRentForm(forms.BookRentForm):
     class Meta:
         model = Rental
-        fields = ['name','whoo']
+        fields = ['name','whoo','who']

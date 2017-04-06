@@ -10,7 +10,7 @@ from django.contrib import admin
 
 
 class RentalAdmin(admin.ModelAdmin):
-    search_fields = ['name,''whoo']
+    search_fields = ['name,''whoo''who']
     #,'what','when','returned'
     # ordering =['who']
 

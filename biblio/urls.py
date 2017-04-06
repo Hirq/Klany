@@ -13,9 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from django.conf.urls.static import static
 from shelf.views import MainPageView
 from contact.views import MessageAddView
 from Rental.views import BookRentView
@@ -35,3 +36,6 @@ urlpatterns = [
     url(r'^Rental/', include('Rental.urls', namespace='Rental')),
     url(r'^accounts/', include('allauth.urls')),
         ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
