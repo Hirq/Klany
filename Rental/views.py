@@ -35,5 +35,16 @@ class RentDeleteView(DeleteView):
 class RentListView(ListView):
     model = Rental
 
+
 class RentDetailView(DetailView):
     model = Rental
+
+class RentListView1(ListView):
+    model = Rental
+    template_name = 'Rental/rental_list_1.html'
+
+class RentListView6(ListView):
+    model = Rental
+    template_name = 'Rental/rental_list_6.html'
+
+

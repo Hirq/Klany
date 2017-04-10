@@ -28,3 +28,4 @@ class Rental (models.Model):
         return "List"
         # return "List/%i/" % self.id
 
+

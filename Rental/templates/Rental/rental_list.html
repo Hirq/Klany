@@ -1,15 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="tlo2"style="color:#F3EFE0">
 <ul>
+    Użytkownicy:
+
+    <li> <a  href="/Rental/List_1" style="text-decoration: none;color: #FFFFFF">ID.1 - Hirq</li>
+
+    <li> <a  href="/Rental/List_6" style="text-decoration: none;color: #FFFFFF"> ID.6 - Czarek</li>
+</div>
+
+  <br><br><br><br>
 {% for Rental in object_list %}
-
-    {% if Rental.who_id == 1 %}
-    <li> <a  href="{% url 'Rental:rental_detail' Rental.id %}" style="text-decoration: none;color: #FFFFFF"> {{ Rental.name }} {{ Rental.whoo }} {{Rental.who}} -  ID.{{Rental.who_id}}</li>
-    {%endif%}
-
-{% endfor %}
+<div class="tlo2">
+    <li> <a  href="{% url 'Rental:rental_detail' Rental.id %}" style="text-decoration: none;color: #F3EFE0"> {{ Rental.name }} {{ Rental.whoo }} {{Rental.who}} -  ID.{{Rental.who_id}}</li>
 </ul>
+</div>
+{% endfor %}
+
 
 {% endblock %}
 

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="tlo2">
     <form method="post">
     {% csrf_token %}
     <table>
@@ -7,4 +8,5 @@
     </table>
     <button type="submit">Wyślij</button>
     </form>
+</div>
 {%  endblock %}

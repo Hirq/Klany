@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="tlo2" style="color: black">
 <ul>
     <form method="post">
     {% csrf_token %}
@@ -9,4 +10,5 @@
     <button type="submit" value="Save">Dodaj</button>
     </form>
 </ul>
+</div>
 {%  endblock %}

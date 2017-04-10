@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class = "tlo2">
+<h2 style="color: white">Lista pozycji użytkownika hirq</h2>
+<table class="table" style="color:white">
+    <thead>
+        <th>
+            Nazwa książki
+        </th>
+        <th>
+            Komu wypożyczono
+        </th>
+        <th>
+            Kto wypożyczył
+        </th>
+        <th>
+
+        </th>
+    </thead>
+    <tbody>
+        {% for Rental in object_list %}
+            {% if Rental.who_id == 1 %}
+
+                    <tr>
+                        <td>{{ Rental.name }}</td>
+                        <td>{{ Rental.whoo }}</td>
+                        <td>{{Rental.who}}</td>
+                        <td><a href="{% url 'Rental:rental_detail' Rental.id %}" style="text-decoration: none;color: #FFFFFF"> <button class="btn btn-primary"> Szczegóły </button> </a></td>
+                    </tr>
+
+            {%endif%}
+        {% endfor %}
+    </tbody>
+</table>
+
+
+</div>
+{% endblock %}
+

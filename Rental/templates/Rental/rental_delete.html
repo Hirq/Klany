@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="tlo2">
 <form action="" method="post">
     {% csrf_token %}
-    <p>Are you sure you want to delete "{{ object.name }} {{object.whoo}}"?</p>
+    <p style="color:#F3EFE0">Are you sure you want to delete "{{ object.name }} {{object.whoo}}"?</p>
 
-    <input type="submit" value="CONFIRM"/>
+    <input type="submit" value="CONFIRM" style="color: black"/>
 
 </form>
+</div>
 {% endblock %}
