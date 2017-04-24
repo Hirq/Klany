@@ -1,12 +1,15 @@
 from django.shortcuts import render
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, View
+from django.http import HttpResponse
 from django.urls import reverse
 
 from django.urls import reverse_lazy
 
 from .models import Rental
+
+
 
 class BookRentView(CreateView):
     model = Rental
@@ -46,5 +49,11 @@ class RentListView1(ListView):
 class RentListView6(ListView):
     model = Rental
     template_name = 'Rental/rental_list_6.html'
+
+
+class MyView(View):
+    def get(self, request):
+        request.GET.get('q', 'standard')
+        return HttpResponse(request.GET.get(Rental.who_id))
 
 

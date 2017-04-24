@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 
 
 
-from Rental.views import RentListView, RentDetailView, RentDeleteView, RentListView1,RentListView6
+from Rental.views import RentListView, RentDetailView, RentDeleteView, RentListView1,RentListView6, MyView
 
 
 urlpatterns = [
@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^List1/(?P<pk>\d+)/$', RentDeleteView.as_view(), name='rental_delete'),
     url(r'^List_1/$', RentListView1.as_view(), name='rental_list_1'),
     url(r'^List_6/$', RentListView6.as_view(), name='rental_list_6'),
+    url(r'^about/$', MyView.as_view(), name='test'),
         ]
